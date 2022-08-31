@@ -111,5 +111,5 @@ where CustomersWork.CompanyName like '½test½'
 
 Select CCustomerID, CompantName,ContactName from Customers
 union all
-selevt * from CustomersWork
+select * from CustomersWork
 
