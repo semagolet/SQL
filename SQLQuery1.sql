@@ -127,3 +127,19 @@ ALTER INDEX INDEX_NAME ON INDEX_NAME REBUILD
 
 ALTER INDEX INDEX_NAME ON SALES.INDEX_NAME REORGANIZE 
 
+CREATE VIEW OrdersList
+AS
+SELECT OrderID, CustomerID, OrderDate, ShipAddress, ShipCity, ShipCountry FROM Orders 
+
+
+/* ŞİFRELİ VIEW OLUŞTURMA */ 
+
+CREATE VIEW OrderList
+WITH ENCRYPTION 
+AS
+SELECT c.CustomerID, c.ContactName, o.OrderID, o.OrderDate, o.ShipAddress, o.ShipCity, o.ShipCountry
+FROM Orders AS o
+JOIN Customers As c
+on c.CustomerID= o.CustomerID
+
+
